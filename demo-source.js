@@ -63,12 +63,12 @@ var treeSetting = {
 		}
 		if(node.proxyName == "organization"){//展开的是单位节点
 			if(curProxyName == "employee"){//单位节点下加载员工节点
-				return "org="+node["id"];
+				return {filed: "org", operate: "=", value: node["id"]};
 			}else{//单位节点下加载角色节点
-				return "org1="+node["id"];
+				return {filed: "curorg", operate: "=", value: node["id"]};
 			}
 		}else if(node.proxyName = "employee"){//展开员工节点
-			return "owner="+node["id"];//查询员工下角色的查询条件
+			return {filed: "owner", operate: "=", value: node["id"]};//查询员工下角色的查询条件
 		}
 		
 	},
