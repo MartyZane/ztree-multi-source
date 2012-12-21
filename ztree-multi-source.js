@@ -229,9 +229,12 @@
 						if(setting._root_flag){//这处理如果后面的根节点只有一个则自动展开
 							var _tree = zt.getZTreeObj(setting.treeId);
 							var _otRoots = _tree.getNodes();
-							if(_otRoots.length == 1){
-								//展开第一个
-								_tree.expandNode(_otRoots[0], true);
+							if(_otRoots.length > 0){
+								_tree.selectNode(_otRoots[0]);
+								if(_otRoots.length == 1){
+									//展开第一个
+									_tree.expandNode(_otRoots[0], true);
+								}
 							}
 							setting._root_flag = false;
 						}
