@@ -156,7 +156,7 @@
 				//加载前处理用户自定义的查询条件
 				if(setting.beforeLoad){
 					var userCondition = setting.beforeLoad(node, curProxyName) || [];
-					if(!$.isArray(conditions)){
+					if(!$.isArray(userCondition)){
 						userCondition = [userCondition];
 					}
 					$.extend(conditions, userCondition);
